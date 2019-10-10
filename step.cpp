@@ -4,7 +4,7 @@ struct stack
     std::string data[8];
     bool isfull()
     {
-        return top == 9 ? true : false;
+        return top == 8 ? true : false;
     }
     bool isempty()
     {
@@ -16,7 +16,7 @@ struct stack
     }
     void push(std::string d){
         if(isfull()){
-            std::cout<<"penuh!";
+            std::cout<<"penuh!\n";
         }
         else{
             top++;
@@ -25,7 +25,7 @@ struct stack
     }
     void pop(){
         if(isempty())
-            std::cout<<"kosong!";
+            std::cout<<"kosong!\n";
         else
             top--;
     }
@@ -37,4 +37,15 @@ struct stack
             return "kosong!";
         }
     }
-} baru;
+    std::string getItem(int index){
+        if(index>-1&&index<=top){
+            return data[index];
+        }
+        else if(index>top){
+            return "forbidden - over";
+        }
+        else{
+            return "forbidden - under";
+        }
+    }
+}f;
